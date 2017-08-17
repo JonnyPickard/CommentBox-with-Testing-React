@@ -6,7 +6,7 @@ import CommentBox from '../../src/components/comment_box';
 describe('CommentBox', () => {
   it('has a the class comment-box', () => {
     const wrapper = shallow(<CommentBox />);
-    expect(wrapper).to.have.class('comment-box');
+    expect(wrapper.hasClass('comment-box')).to.equal(true);
   });
 
   it('has a text area', () => {
