@@ -8,8 +8,10 @@ module.exports = {
     "class-methods-use-this": 0,
     "react/prefer-stateless-function": 0,
     "no-use-before-define": 0,
+    "no-unused-expressions": 0
   },
   "env": {
-    "browser": true
+    "browser": true,
+    "mocha": true
   }
 };

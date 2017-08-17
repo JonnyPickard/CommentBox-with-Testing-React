@@ -1,14 +1,11 @@
-import { renderComponent , expect } from '../test_helper';
+import React from 'react';
+import { expect } from 'chai';
+import { shallow } from 'enzyme';
 import App from '../../src/components/app';
 
-describe('App' , () => {
-  let component;
-
-  beforeEach(() => {
-    component = renderComponent(App);
-  });
-
+describe('App', () => {
   it('renders something', () => {
-    expect(component).to.exist;
+    const wrapper = shallow(<App />);
+    expect(wrapper).to.exist;
   });
 });
