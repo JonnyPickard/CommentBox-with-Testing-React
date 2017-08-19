@@ -6,7 +6,7 @@
   "repository": "",
   "scripts": {
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
-    "test": "mocha --compilers js:babel-core/register --recursive ./test",
+    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
     "test:watch": "npm run test -- --watch"
   },
   "author": "",
@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "babel-preset-stage-1": "^6.1.18",
+    "chai-enzyme": "^0.8.0",
     "enzyme": "^2.9.1",
     "eslint": "^4.3.0",
     "lodash": "^3.10.1",
