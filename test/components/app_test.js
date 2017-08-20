@@ -3,7 +3,6 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 
 import renderContainer from '../test_helper';
-
 import App from '../../src/components/app';
 
 describe('App', () => {

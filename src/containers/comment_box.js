@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
-export default class CommentBox extends Component {
+import saveComment from '../actions';
+
+class CommentBox extends Component {
   constructor(props) {
     super(props);
     this.state = { comment: '' };
@@ -14,18 +18,33 @@ export default class CommentBox extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
+
+    this.props.saveComment(this.state.comment);
     this.setState({ comment: '' });
   }
 
   render() {
     return (
       <form onSubmit={this.handleSubmit} className="comment-box">
+        <h4>Add a comment</h4>
         <textarea
           value={this.state.comment}
           onChange={this.onHandleChange}
         />
-        <button action="submit">Submit Comment</button>
+        <div>
+          <button action="submit">Submit Comment</button>
+        </div>
       </form>
     );
   }
 }
+
+CommentBox.propTypes = {
+  saveComment: PropTypes.func.isRequired,
+};
+
+function mapStateToProps(state) {
+  return { comments: state.comment };
+}
+
+export default connect(mapStateToProps, { saveComment })(CommentBox);

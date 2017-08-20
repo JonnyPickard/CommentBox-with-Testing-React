@@ -1,13 +1,13 @@
-import React from 'react';
 import { expect } from 'chai';
-import { mount } from 'enzyme';
-import CommentBox from '../../src/components/comment_box';
+
+import { CommentBox } from '../../src/containers';
+import renderContainer from '../test_helper';
 
 describe('CommentBox', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = mount(<CommentBox />);
+    wrapper = renderContainer(CommentBox);
   });
 
   it('has a the class comment-box', () => {

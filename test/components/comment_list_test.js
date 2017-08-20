@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 
 import renderContainer from '../test_helper';
-import CommentList from '../../src/containers/comment_list';
+import { CommentList } from '../../src/containers';
 
 describe('CommentList', () => {
   let wrapper;
