@@ -1,10 +1,22 @@
+// @flow
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 
 import saveComment from '../actions';
 
-class CommentBox extends Component {
+type State = {
+  comment: string
+}
+
+type Props = {
+  saveComment: (comment: string) => string,
+}
+
+class CommentBox extends Component<Props, State> {
+  onHandleChange: Function;
+  handleSubmit: Function;
+
   constructor(props) {
     super(props);
     this.state = { comment: '' };
@@ -38,10 +50,6 @@ class CommentBox extends Component {
     );
   }
 }
-
-CommentBox.propTypes = {
-  saveComment: PropTypes.func.isRequired,
-};
 
 function mapStateToProps(state) {
   return { comments: state.comment };

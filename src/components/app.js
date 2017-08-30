@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
+// @flow
+
+import React from 'react';
 
 import { CommentBox, CommentList } from '../containers';
 
-export default class App extends Component {
-  render() {
-    return (
-      <div className="app">
-        <CommentBox />
-        <CommentList />
-      </div>
-    );
-  }
-}
+const App = () => (
+  <div className="app">
+    <CommentBox />
+    <CommentList />
+  </div>
+);
+
+export default App;

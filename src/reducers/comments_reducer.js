@@ -1,6 +1,13 @@
+// @flow
+
 import SAVE_COMMENT from '../actions/types';
 
-export default function (state = [], action) {
+type Action = {
+  +type: ?string,
+  +payload: ?string
+}
+
+export default function (state: Array<?string> = [], action: Action) {
   switch (action.type) {
     case SAVE_COMMENT:
       return [...state, action.payload];

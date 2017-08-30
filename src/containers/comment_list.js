@@ -1,8 +1,13 @@
+// @flow
+
 import React from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 
-const CommentList = ({ comments }) => {
+type Props = {
+  comments: Array<?string>
+}
+
+const CommentList = ({ comments }: Props) => {
   const list = comments.map(comment => <li key={comment}>{comment}</li>);
 
   return (
@@ -15,9 +20,5 @@ const CommentList = ({ comments }) => {
 function mapStateToProps(state) {
   return { comments: state.comments };
 }
-
-CommentList.propTypes = {
-  comments: PropTypes.array.isRequired,
-};
 
 export default connect(mapStateToProps)(CommentList);
